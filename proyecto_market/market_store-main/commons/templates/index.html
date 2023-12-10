@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extrahead %} 
+<title>Inicio</title>
+<link rel="stylesheet" href="{% static '/css/index1.css' %}" >
+{% endblock extrahead%}
+
+{% block content %}
+{% if messages %}
+	{% for message in messages %}
+    <div {% if message.tags == 'warning' %} class="alert alert-warning alert-message"{% else %} class="alert alert-success alert-message" {% endif %}>
+        <b class="message-alert">{{ message }}</b>       
+    </div>	
+	{% endfor %}
+{% endif %}
+<h1 class="display-2 text-center" id="title">MARKET D'WAN</h1>
+<img src="{% static '/img/index/intro1.jpg' %}" class="img-fluid rounded mx-auto d-block" id="img_index" alt="Error cargando Imagen">
+<figure class="text-center">
+    <blockquote class="blockquote">
+      <p class="text_responsive">Market D'WAN es un supermercado familiar que ofrece una amplia variedad de productos de calidad a precios competitivos. Nos comprometemos a brindar a nuestros clientes una experiencia de compra placentera y satisfactoria.
+
+        Nuestro equipo está dedicado a brindar un servicio excelente a nuestros clientes. Estamos siempre disponibles para ayudarte a encontrar lo que necesitas y responder a tus preguntas.
+        
+        Visita Market D'WAN hoy mismo y descubre por qué somos tu supermercado de confianza.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      MARKET D'WAN OCAÑA</cite>
+    </figcaption>
+  </figure>
+{% endblock content%}
+
